@@ -1,18 +1,31 @@
 body {
     background: url(../images/bg1.jpg) repeat;
 }
+
+.translate {
+    float: right;
+}
+
+.translate a {
+    text-decoration: none;
+    color: #7a7a7a;
+}
+
 .jumbotron {
     background: rgba(223, 223, 223, 0.67);
     border: 1px solid rgba(116, 116, 116, 0.22);
 }
+
 .avatar {
     margin-top: -30px;
 }
+
 .avatar h1 {
     font: 38px "Jura", "san-serif";
     color: #7a7a7a;
     padding: 20px 0 30px 0;
 }
+
 .avatar img {
     max-width: 270px;
     -webkit-border-radius: 50%;
@@ -62,6 +75,38 @@ body {
 .social-ic a.ic-pdf:hover {
     background-position: -120px -40px;
 }
+
+/* Спрайты для англ. версии */
+.social-ic-Eng {
+    margin-left: 70px;
+}
+.social-ic-Eng a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url("../images/sprites/social-ic.png") no-repeat;
+}
+.social-ic-Eng a.ic-git {
+    background-position: 0 0;
+}
+.social-ic-Eng a.ic-git:hover {
+    background-position: 0 -40px;
+}
+
+.social-ic-Eng a.ic-skype {
+    background-position: -40px 0;
+}
+.social-ic-Eng a.ic-skype:hover {
+    background-position: -40px -40px;
+}
+
+.social-ic-Eng a.ic-mail {
+    background-position: -80px 0;
+}
+.social-ic-Eng a.ic-mail:hover {
+    background-position: -80px -40px;
+}
+
 
 /* Разговорное облако */
 .shadow {
@@ -150,9 +195,16 @@ body {
     .social-ic {
         margin-left: 25px;
     }
+    .social-ic-Eng {
+        margin-left: 47px;
+    }
 }
 
 @media (max-width: 991px) {
+    .container .jumbotron,
+    .container-fluid .jumbotron {
+        padding: 15px 5px 5px 5px;
+    }
     .avatar h1 {
         font-size: 34px;
         text-align: center;
@@ -164,6 +216,9 @@ body {
     .social-ic {
         margin-left: 35%;
     }
+    .social-ic-Eng {
+        margin-left: 37%;
+    }
     .description {
         margin-top: 20px;
     }
@@ -174,13 +229,13 @@ body {
         font-size: 14px;
     }
     .shadow:before {
-        left: 275px;
+        left: 310px;
         top: -40px;
         border: 20px solid;
         border-color: transparent transparent rgba(116, 116, 116, 0.07) transparent;
     }
     .shadow:after {
-        left: 276px;
+        left: 311px;
         top: -38px;
         border: 19px solid;
         border-color: transparent transparent white transparent;
@@ -200,6 +255,9 @@ body {
     }
     .social-ic {
         margin-left: 36%;
+    }
+    .social-ic-Eng {
+        margin-left: 39%;
     }
     .shadow:before {
         left: 46.3%;
@@ -225,6 +283,9 @@ body {
     .social-ic {
         margin-left: 34%;
     }
+    .social-ic-Eng {
+        margin-left: 38%;
+    }
 }
 
 @media (max-width: 540px) {
@@ -233,6 +294,9 @@ body {
     }
     .social-ic {
         margin-left: 31%;
+    }
+    .social-ic-Eng {
+        margin-left: 36%;
     }
 }
 
@@ -247,6 +311,9 @@ body {
     .social-ic {
         margin-left: 29%;
     }
+    .social-ic-Eng {
+        margin-left: 33%;
+    }
     .shadow p {
         font-size: 12px;
     }
@@ -260,7 +327,7 @@ body {
 
 @media (max-width: 440px) {
     .avatar img {
-        margin-left: 24%;
+        margin-left: 25%;
     }
     .social-ic {
         margin-left: 28%;
