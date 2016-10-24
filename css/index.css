@@ -1,5 +1,5 @@
 body {
-    background: url(../images/bg1.jpg) repeat;
+    background: url(../images/bg.jpg) repeat;
 }
 
 .translate {
@@ -39,6 +39,9 @@ body {
 }
 
 /* Спрайты */
+.ic {
+    margin-bottom: 10px;
+}
 .social-ic {
     margin-left: 50px;
 }
@@ -115,10 +118,10 @@ body {
     padding: 25px 25px 25px 25px;
     text-align: justify;
     border: 2px solid rgba(116, 116, 116, 0.20);
-    -webkit-border-radius: 5%;
-       -moz-border-radius: 5%;
-         -o-border-radius: 5%;
-            border-radius: 5%;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+         -o-border-radius: 10px;
+            border-radius: 10px;
 }
 .shadow:before {
     content:"";
@@ -166,7 +169,8 @@ body {
     padding-bottom: 7px;
 }
 
-.description a {
+.description a,
+.description span {
     font: 16px "Jura", "san-serif";
     font-weight: bold;
     color: rgba(122, 122, 122, 0.63);
@@ -246,9 +250,13 @@ body {
 }
 
 @media screen and (max-width: 767px) {
+    .avatar {
+        margin-bottom: -10px;
+    }
     .avatar h1 {
         font-size: 30px;
-        padding: 0 0 10px 0;
+        padding: 0 0 5px 0;
+        margin-left: 25px;
     }
     .avatar img {
         margin-left: 32%;
