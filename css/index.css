@@ -2,8 +2,13 @@ body {
     background: url(../images/bg.jpg) repeat;
 }
 
+.container .jumbotron {
+    margin-bottom: 50px;
+}
+
 .translate {
     float: right;
+    margin: 5px 5px 0 0;
 }
 
 .translate a {
@@ -49,34 +54,38 @@ body {
     display: inline-block;
     width: 40px;
     height: 40px;
-    background: url("../images/sprites/social-ic.png") no-repeat;
+    background: url("../images/sprites/social-ic-2.png") no-repeat;
+}
+.social-ic a:hover {
+    background: url("../images/sprites/social-ic-3.png") no-repeat;
+    -webkit-transition: All 0.5s ease; /* плавное изменение цвета исконки */
+       -moz-transition: All 0.5s ease;
+         -o-transition: All 0.5s ease;
+            transition: All 0.5s ease;
 }
 .social-ic a.ic-git {
     background-position: 0 0;
 }
 .social-ic a.ic-git:hover {
-    background-position: 0 -40px;
+    background-position: 0 0;
 }
-
 .social-ic a.ic-skype {
     background-position: -40px 0;
 }
 .social-ic a.ic-skype:hover {
-    background-position: -40px -40px;
+    background-position: -40px 0;
 }
-
 .social-ic a.ic-mail {
     background-position: -80px 0;
 }
 .social-ic a.ic-mail:hover {
-    background-position: -80px -40px;
+    background-position: -80px 0;
 }
-
 .social-ic a.ic-pdf {
     background-position: -120px 0;
 }
 .social-ic a.ic-pdf:hover {
-    background-position: -120px -40px;
+    background-position: -120px 0;
 }
 
 /* Спрайты для англ. версии */
@@ -87,29 +96,33 @@ body {
     display: inline-block;
     width: 40px;
     height: 40px;
-    background: url("../images/sprites/social-ic.png") no-repeat;
+    background: url("../images/sprites/social-ic-2.png") no-repeat;
+}
+.social-ic-Eng a:hover {
+    background: url("../images/sprites/social-ic-3.png") no-repeat;
+    -webkit-transition: All 0.5s ease; /* плавное изменение цвета исконки */
+    -moz-transition: All 0.5s ease;
+    -o-transition: All 0.5s ease;
+    transition: All 0.5s ease;
 }
 .social-ic-Eng a.ic-git {
     background-position: 0 0;
 }
 .social-ic-Eng a.ic-git:hover {
-    background-position: 0 -40px;
+    background-position: 0 0;
 }
-
 .social-ic-Eng a.ic-skype {
     background-position: -40px 0;
 }
 .social-ic-Eng a.ic-skype:hover {
-    background-position: -40px -40px;
+    background-position: -40px 0;
 }
-
 .social-ic-Eng a.ic-mail {
     background-position: -80px 0;
 }
 .social-ic-Eng a.ic-mail:hover {
-    background-position: -80px -40px;
+    background-position: -80px 0;
 }
-
 
 /* Разговорное облако */
 .shadow {
@@ -158,7 +171,10 @@ body {
 /* Видео */
 .video-content {
     margin-bottom: 50px;
-    background-color: #fbfbfb;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+         -o-border-radius: 10px;
+            border-radius: 10px;
     -webkit-box-shadow: 0 0 10px rgba(61, 61, 61, 0.6);
        -moz-box-shadow: 0 0 10px rgba(61, 61, 61, 0.6);
          -o-box-shadow: 0 0 10px rgba(61, 61, 61, 0.6);
@@ -184,8 +200,13 @@ body {
 
 /* Footer */
 .copyright p {
-    font-size: 9px;
+    font-size: 13px;
     float: right;
+    color: #7a7a7a;
+}
+
+.copyright p span {
+    font-weight: 600;
 }
 
 /* @media */
@@ -216,6 +237,10 @@ body {
     }
     .avatar img {
         margin-left: 30%;
+        -webkit-box-shadow: 0 0 0;
+        -moz-box-shadow: 0 0 0;
+        -o-box-shadow: 0 0 0;
+        box-shadow: 0 0 0;
     }
     .social-ic {
         margin-left: 35%;
@@ -279,8 +304,8 @@ body {
         border: 13px solid;
         border-color: transparent transparent white transparent;
     }
-    .copyright p {
-        font-size: 6px;
+    .copyright p span {
+        font-size: 12px;
     }
 }
 
@@ -321,12 +346,6 @@ body {
     }
     .social-ic-Eng {
         margin-left: 33%;
-    }
-    .shadow p {
-        font-size: 12px;
-    }
-    .shadow ul>li {
-        font-size: 12px;
     }
     .description a {
         font-size: 12px;
