@@ -1,0 +1,388 @@
+@import "compass", "compass/reset", "mixin", "media-queries";
+
+// for Bootstrap
+.no-margin {margin: 0 !important}
+.no-gutter > [class*='col-'] {
+  padding-right:0;
+  padding-left:0;
+}
+
+$font-stack: "Jura", sans-serif;
+$font-size: 16px;
+$font-title-size: 38px;
+$line-height: 24px;
+
+$bg-jumbotron: rgba(223, 223, 223, 0.67);
+$bg-body: url(../images/bg.jpg);
+
+$grey: #7A7A7A;
+$white: #ffffff;
+
+$border-color-grey: rgba(116, 116, 116, 0.07);
+$box-shadow-color-grey: rgba(61, 61, 61, 0.5);
+
+$def-margin: 50px;
+
+$bg-sprites: url("../images/sprites/social-ic-2.png") no-repeat;
+$bg-sprites-hover: url("../images/sprites/social-ic-3.png") no-repeat;
+$sprite-position-first: 0 0;
+$sprite-position-second: -40px 0;
+$sprite-position-third: -80px 0;
+$sprite-position-fourth: -120px 0;
+
+.left {float: left;}
+.right {float: right;}
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+// About
+body {
+  background: $bg-body repeat;
+}
+.jumbotron {
+  background: $bg-jumbotron;
+  border: 1px solid opacify($border-color-grey, 0.22);
+  margin-bottom: $def-margin;
+  .avatar {
+    margin-top: $def-margin -80px;
+    h1 {
+      font: $font-title-size $font-stack;
+      color: $grey;
+      padding: 20px 0 30px 0;
+    }
+    .ava-pic {
+      @include border-radius(50%);
+      @include box-shadow(0 0 20px $box-shadow-color-grey);
+      margin-bottom: $def-margin -40px;
+      max-width: 270px;
+    }
+    // Спрайты
+    %sprites {
+      display: inline-block;
+      background: $bg-sprites;
+      width: 40px;
+      height: 40px;
+    }
+    .social-ic {
+      margin-left: $def-margin;
+      a {
+        @extend %sprites;
+        &:hover {
+          @include transition(All 0.5s ease);
+          background: $bg-sprites-hover;
+        }
+      }
+      a.ic-git {
+        background-position: $sprite-position-first;
+      }
+      a.ic-git:hover {
+        background-position: $sprite-position-first;
+      }
+      a.ic-skype {
+        background-position: $sprite-position-second;
+      }
+      a.ic-skype:hover {
+        background-position: $sprite-position-second;
+      }
+      a.ic-mail {
+        background-position: $sprite-position-third;
+      }
+      a.ic-mail:hover {
+        background-position: $sprite-position-third;
+      }
+      a.ic-pdf {
+        background-position: $sprite-position-fourth;
+      }
+      a.ic-pdf:hover {
+        background-position: $sprite-position-fourth;
+      }
+    }
+  }
+  // Спрайты для англ. версии
+  .social-ic-Eng {
+    margin-left: $def-margin +20px;
+    a {
+      @extend %sprites;
+      &:hover {
+        @include transition(All 0.5s ease);
+        background: $bg-sprites-hover;
+      }
+    }
+    a.ic-git {
+      background-position: $sprite-position-first;
+    }
+    a.ic-git:hover {
+      background-position: $sprite-position-first;
+    }
+    a.ic-skype {
+      background-position: $sprite-position-second;
+    }
+    a.ic-skype:hover {
+      background-position: $sprite-position-second;
+    }
+    a.ic-mail {
+      background-position: $sprite-position-third;
+    }
+    a.ic-mail:hover {
+      background-position: $sprite-position-third;
+    }
+  }
+}
+.translate {
+  float: right;
+  margin: $def-margin -45px $def-margin -45px 0 0;
+  a {
+    color: $grey;
+  }
+}
+// Разговорное облако
+.shadow-style {
+  content:"";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.shadow {
+  @include border-radius(10px);
+  background-color: $white;
+  border: 2px solid opacify($border-color-grey, 0.20);
+  position: relative;
+  padding: 25px;
+  text-align: justify;
+  &:before {
+    @extend .shadow-style;
+    left: -50px;
+    top: 150px;
+    border: 25px solid;
+    border-color: transparent $border-color-grey transparent transparent;
+  }
+  &:after {
+    @extend .shadow-style;
+    left: -45px;
+    top: 151px;
+    border: 24px solid;
+    border-color: transparent white transparent transparent;
+  }
+  p {
+    font: #{$font-size}/#{$line-height} $font-stack;
+    color: $grey;
+  }
+  ul > li {
+    font: #{$font-size}/#{$line-height} $font-stack;
+    color: $grey;
+  }
+}
+// Видео
+.video-content {
+  @include border-radius(10px);
+  @include box-shadow(0 0 10px opacify($box-shadow-color-grey, 0.6));
+  margin-bottom: $def-margin;
+}
+.description {
+  padding-bottom: 7px;
+  a, span {
+    font: $font-size $font-stack;
+    font-weight: bold;
+    color: rgba(122, 122, 122, 0.63);
+    letter-spacing: -0.5px;
+  }
+  a:hover {
+    color: #000000;
+    @include transition(All 0.2s ease);
+  }
+}
+// Footer
+.copyright {
+  p {
+    font-size: $font-size - 3px;
+    float: right;
+    color: $grey;
+  }
+  span {
+    font-weight: 600;
+  }
+}
+// @media
+@include mq($max-width: 991px) {
+  .container {
+    .jumbotron {
+      padding: 15px 5px 5px 5px;
+      .avatar {
+        h1 {
+          font-size: 34px;
+          text-align: center;
+          padding: 0 0 10px 0;
+        }
+        .ava-pic {
+          margin-left: 30%;
+          @include box-shadow(none);
+        }
+        .social-ic {
+          margin-left: 35%;
+        }
+        .social-ic-Eng {
+          margin-left: 37%;
+        }
+      }
+      .description {
+        margin-top: 20px;
+        a {
+          font-size: $font-size - 2px;
+        }
+        .shadow {
+          &:before {
+            left: 310px;
+            top: -40px;
+            border: 20px solid;
+            border-color: transparent transparent $border-color-grey transparent;
+          }
+          &:after {
+            left: 311px;
+            top: -36px;
+            border: 19px solid;
+            border-color: transparent transparent white transparent;
+          }
+          p {
+            font-size: $font-size - 2px;
+          }
+          ul > li {
+            font-size: $font-size - 2px;
+          }
+        }
+      }
+    }
+  }
+}
+@include mq($max-width: 767px) {
+  .container {
+    .jumbotron {
+      .avatar {
+        h1 {
+          font-size: $font-size * 2;
+          padding: 0 0 5px 0;
+          margin-left: 25px;
+        }
+        .ava-pic {
+          margin-left: 32%;
+        }
+        .social-ic {
+          margin-left: 36%;
+        }
+        .social-ic-Eng {
+          margin-left: 39%;
+        }
+      }
+      .description {
+        .shadow {
+          &:before {
+            left: 46.3%;
+            top: -28px;
+            border: 14px solid;
+            border-color: transparent transparent $border-color-grey transparent;
+          }
+          &:after {
+            left: 46.5%;
+            top: -25px;
+            border: 13px solid;
+            border-color: transparent transparent white transparent;
+          }
+        }
+      }
+      .copyright p span {
+        font-size: $font-size - 4px;
+      }
+    }
+  }
+}
+@include mq($max-width: 650px) {
+  .container {
+    .jumbotron {
+      .avatar {
+        h1 {
+          margin-left: 11%;
+        }
+        .ava-pic {
+          margin-left: 29%;
+        }
+        .social-ic {
+          margin-left: 34%;
+        }
+        .social-ic-Eng {
+          margin-left: 38%;
+        }
+      }
+    }
+  }
+}
+@include mq($max-width: 540px) {
+  .container {
+    .jumbotron {
+      .avatar {
+        .ava-pic {
+          margin-left: 25%;
+        }
+        .social-ic {
+          margin-left: 31%;
+        }
+        .social-ic-Eng {
+          margin-left: 36%;
+        }
+      }
+    }
+  }
+}
+@include mq($max-width: 480px) {
+  .container {
+    .jumbotron {
+      .avatar {
+        h1 {
+          font-size: $font-size + 8px;
+          margin-left: 12%;
+        }
+        .ava-pic {
+          max-width: 180px;
+          margin-left: 29%;
+        }
+        .social-ic {
+          margin-left: 29%;
+        }
+        .social-ic-Eng {
+          margin-left: 33%;
+        }
+      }
+      .description a {
+        font-size: 12px;
+      }
+    }
+  }
+}
+@include mq($max-width: 440px) {
+  .container {
+    .jumbotron {
+      .avatar {
+        h1 {
+          margin-left: 50px;
+        }
+        .ava-pic {
+          margin-left: 26%;
+        }
+        .social-ic {
+          margin-left: 27%;
+        }
+      }
+    }
+  }
+}
+@include mq($max-width: 400px) {
+  .container {
+    .jumbotron {
+      .avatar {
+        .social-ic {
+          margin-left: 25%;
+        }
+      }
+    }
+  }
+}
